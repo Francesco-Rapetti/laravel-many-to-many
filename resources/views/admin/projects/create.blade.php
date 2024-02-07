@@ -64,6 +64,15 @@
                     </select>
                 </div>
 
+                <div class="mb-3">
+                    <label for="technologies" class="form-label">Seleziona le tecnologie usate</label>
+                    <select name="technologies[]" id="technologies" class="form-select" multiple>
+                        @foreach ($technologies as $technology)
+                            <option value="{{ $technology->id }}">{{ $technology->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Insert</button>
             </form>
         </div>
