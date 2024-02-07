@@ -13,10 +13,12 @@
                                         class="{{ App\Models\Type::find($project->type_id)->icon }} me-2"></i>{{ App\Models\Type::find($project->type_id)->name }}</span>
                             @endif
                         </h5>
+                        @if ($project->technologies)
+                            @foreach ($project->technologies as $technology)
+                                <span class="badge rounded-pill {{ $technology->color }}">{{ $technology->name }}</span>
+                            @endforeach
+                        @endif
                         <p class="card-text">{{ $project->description }}</p>
-                        <span class="badge rounded-pill text-bg-light">Tags</span>
-                        <span class="badge rounded-pill text-bg-light">Tags</span>
-                        <span class="badge rounded-pill text-bg-light">Tags</span>
                     </div>
                     <div class="d-flex align-items-center mb-3 ps-3 justify-self-end justify-content-center">
                         <a class="btn btn-primary me-3 add-cart-btn w-100 d-flex justify-content-center align-items-center"
